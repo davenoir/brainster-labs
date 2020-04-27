@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brainster Labs</title>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Assets/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--navbar has some pretty lousy bug from bootstrap when it's fixed-top but 
+        there is a temporary solution not the best but still it's sth :), more explanation in /style.css navbar comment section-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="Assets/img/logo&heading/brainster_small.png" alt="brainsterlogo" class="imglogo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.brainster.io/marketpreneurs" target="_blank">Академија за
+                            маркетинг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://codepreneurs.co/" target="_blank">Академија за програмирање</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.brainster.io/data-science" target="_blank">Академија за
+                            data science</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.brainster.io/design" target="_blank">Академија за
+                            дизајн</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-danger btnstyle" href="form.php" role="button">Вработи наш
+                            студент</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid headerimg">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center hide1">
+                <h1>Brainster Labs</h1>
+            </div>
+        </div>
+    </div>
+    <!--Section specifically designed for mobile only it appears only on mobile viewport breakpoints-->
+    <div class="container-fluid show1">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Brainster Labs</h1>
+            </div>
+        </div>
+    </div>
+    <!--Card filterDiv buttons, styled with bootstrap to make them wide as a column and 
+    include two sections in each button to add "checked" font_awesome icon on .active class toggle implementation from Javascript-->
+    <div class="container-fluid" id="myBtnContainer">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 nopad">
+                <button type="button" class="btn btn-dark selectbtn" data-target="marketing">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-8 col-9">
+                                <h6>Проекти на студенти по академијата<br> за маркетинг</h6>
+                            </div>
+                            <div class="col-lg-2 col-sm-4 col-3 filterDiv marketing hide2 alignicon">
+                                <i class="fa fa-check-circle" style="font-size:30px"></i>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 nopad">
+                <button type="button" class="btn btn-dark selectbtn" data-target="coding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-8 col-9">
+                                <h6>Проекти на студенти по академијата<br> за програмирање</h6>
+                            </div>
+                            <div class="col-lg-2 col-sm-4 col-3 filterDiv coding hide2 alignicon">
+                                <i class="fa fa-check-circle" style="font-size:30px"></i>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 nopad">
+                <button type="button" class="btn btn-dark selectbtn" data-target="design">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-8 col-9">
+                                <h6>Проекти на студенти по академијата<br> за дизајн</h6>
+                            </div>
+                            <div class="col-lg-2 col-sm-4 col-3 filterDiv design hide2 alignicon">
+                                <i class="fa fa-check-circle" style="font-size:30px"></i>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid projectHeader">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-4 text-center">
+                <h1 class="sizeHeader"><b>Проекти</b></h2>
+            </div>
+        </div>
+    </div>
+    <!--Cards container-->
+    <div class="cardContainer">
+        <div class="container">
+            <!--It was more of an aesthetic approach and design purpose only to include a styled title before each card type section-->
+            <div class="row rowspace filterDiv coding cardsTitle">
+                <div class="col-lg-12 col-sm-12 col-7 viewportMobile text-left">
+                    <span class="borderleft">ПРОГРАМИРАЊЕ</span>
+                </div>
+            </div>
+            <div class="row justify-content-center rowspace filterDiv coding">
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv coding">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/coding/code1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за програмирање</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv coding">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/coding/code2.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за програмирање</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv coding">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/coding/code3.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за програмирање</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv coding">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/coding/code9.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за програмирање</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row justify-content-center rowspace filterDiv coding">
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv coding">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/coding/code5.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за програмирање</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv coding">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/coding/code6.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за програмирање</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv coding">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/coding/code7.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за програмирање</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv coding">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/coding/code8.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за програмирање</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!--filtering <div class="row"> here in cards container it's an obligatory approach to avoid extra space used from .rowspace class-->
+            <div class="row justify-content-center rowspace filterDiv coding">
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv coding">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/coding/code4.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за програмирање</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv coding">
+                    <!--Card links are optional, external content can be accessed either by click on a card 
+                        or by the button "Дознај повеќе", it's a personal preference of choice-->
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/coding/code10.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за програмирање</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row filterDiv rowspace marketing cardsTitle">
+                <div class="col-lg-12 col-sm-12 col-6 viewportMobile text-left">
+                    <span class="borderleft">МАРКЕТИНГ</span>
+                </div>
+            </div>
+            <div class="row justify-content-center rowspace filterDiv marketing">
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv marketing">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/marketing/market5.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за маркетинг</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv marketing">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/marketing/market2.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за маркетинг</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv marketing">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/marketing/market3.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за маркетинг</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv marketing">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/marketing/market4.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за маркетинг</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row justify-content-center rowspace filterDiv marketing">
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv marketing">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/marketing/market6.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за маркетинг</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv marketing">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/marketing/market1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за маркетинг</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row filterDiv rowspace design cardsTitle">
+                <div class="col-lg-12 col-sm-12 col-6 viewportMobile text-left">
+                    <span class="borderleft"> ДИЗАЈН<span>
+                </div>
+            </div>
+            <div class="row justify-content-center rowspace filterDiv design">
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv design">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/design/design4.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за дизајн</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv design">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/design/design2.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за дизајн</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv design">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/design/design1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за дизајн</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-11 col-sm-11 col-11 filterDiv design">
+                    <a href="#" target="_blank" class="cardlink">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="Assets/img/design/design3.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="yellow">академија за дизајн</span>
+                                <h5 class="card-title">Име на проектот стои овде во две линии</h5>
+                                <p class="card-text">Краток опис во кои студентите ќе можат да опишат за што се работи
+                                    во
+                                    проектот.</p>
+                                <blockquote class="blockquote">
+                                    <span class="cardBlockquote">Април-Октомври 2019</span>
+                                </blockquote>
+                                <div class="text-right">
+                                    <a href="#" target="_blank" class="btn btn-danger">Дознај повеќе</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Copyrights section-->
+    <div class="container-fluid copyright">
+        <div class="row text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <p>Изработено со <i class="em em-heart"></i> од Dave_Noir</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="Assets/js/script.js"></script>
+
+</html>

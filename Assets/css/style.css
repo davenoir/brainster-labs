@@ -1,0 +1,255 @@
+html, body {
+    overflow-x: hidden; /*Had to use it, because when the navbar is fixed
+    it overflows thus horizontal scroll bar appears! Found what was wrong
+    it's a current bootstrap bug when the navbar is fixed-top (googled it)*/
+}
+* {
+    scroll-behavior: smooth;
+    font-family: 'Ubuntu', sans-serif;
+}
+/*Navbar customization */
+.navbar {
+    padding: 0;
+    background-color: rgba(251, 209, 47, 0.7);
+}
+/*all containers i.e. navbar and cards container use the same width to vertically align so it's more visually appealing*/
+.container {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 1300px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1.5rem;
+    padding-left: .5rem;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    text-shadow: 0.5px 0.5px 0.5px #000000;
+}
+.imglogo {
+    max-width: 54px;
+}
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.btnstyle {
+    margin-top: 1%;
+    margin-left: 1.5rem;
+    background-color: #E93A39;
+}
+/*Section above buttons & cards with viewport mobile only hide section*/
+.headerimg {
+    background-image: url(../img/logo&heading/Labs.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80%;
+    box-shadow: inset 0 0 0 1000px rgba(20, 20, 20, 0.59);
+}
+.hide1 {
+    padding: 14%;
+    color:white;
+ 
+}
+.hide1 h1 {
+    font-size: 5rem;
+}
+.show1 {
+    display: none;
+}
+/*Buttons before cards section*/
+.selectbtn {
+    width: 100%;
+    padding: .5rem .5rem;
+    border-radius: 0;
+}
+.btn-dark:not(:disabled):not(.disabled).active, .btn-dark:not(:disabled):not(.disabled):active, .show > .btn-dark.dropdown-toggle {
+    color: black;
+    background-color: #E93A39;
+    border-color: #E93A39;
+}
+.active {
+    background-color: #E93A39;
+}
+.alignicon {
+    padding-top: 1.5%;
+}
+.nopad {
+    padding-left: 0;
+    padding-right: 0;
+}
+/*Cards Section*/
+ .projectHeader {
+    background-color: #FBD12F;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+.yellow {
+    background-color: #FBD12F;
+    font-weight: bold;
+}
+.card {
+    border-radius: 3%;
+    box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.54);
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: transform .7s ease-in-out;
+    cursor: pointer;
+}
+.cardContainer {
+    background-color: #FBD12F;
+    padding-bottom: 5%;
+}
+.card-img-top {
+    border-top-left-radius: 4%;
+    border-top-right-radius: 4%;
+}
+.card-title {
+    font-weight: bold;
+}
+.btn-danger {
+    background-color: #E93A39;
+}
+.rowspace {
+    padding-top: 2.5%;
+}
+.cardBlockquote {
+    font-weight: bold;
+    font-size: small;
+}
+.borderleft {
+    border-left: 4px solid #E93A39;
+    font-size: large;
+    font-weight: 600;
+}
+.cardlink {
+    text-decoration: none !important;
+    color: #000000;
+}
+.cardlink:hover {
+    color: #000000;
+}
+/*JavaScript class*/
+.hide2 {
+    display: none;
+  }
+/*Copyright*/
+.copyright {
+    background-color: #000000;
+    color: white;
+  }
+.copyright p {
+    padding-top: 1rem;
+}
+/*FORM PAGE*/
+.headerForm {
+    display: inline-block;
+    background-color: #FBD12F;
+    color: #000000;
+    padding-top: 12%;
+    padding-bottom: 10%;
+}
+.formContents {
+    background-color: #FBD12F;
+    padding-bottom: 10%;
+}
+/*Form Button*/
+.btn-group-lg > .btn, .btn-lg {
+    padding-top: 0.1%;
+    padding-bottom: 1.4%;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #E93A39;
+    border-color: #E93A39;
+}
+.headerForm h1 {
+    font-size: 3.5rem;
+}
+@media only screen and (max-width: 576px) {
+.navbar-nav {
+    height: 100vh;
+}
+.btnstyle {
+    margin-left: 0.5rem;
+}
+.show1 {
+    display: inline-block;
+    background-color: #FBD12F;
+    padding: 15%;
+}
+.hide1 {
+    display: none;
+}
+.sizeHeader {
+    font-size: xx-large;
+}
+.card {
+    margin-bottom: 5%;
+    height: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.borderleft {
+    margin-left: 0;
+}
+.viewportMobile {
+    margin-left: 2%;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: transform .7s ease-in-out;
+    cursor: pointer;
+}
+/*FORM PAGE*/
+.headerForm h1 {
+    font-size: x-large;
+}
+.headerForm {
+    padding: 18%;
+}
+/*Form Button, here I used a larger margin-top in order to avoid overlap with the drop-down i.e. select input type*/
+.btn-group-lg > .btn, .btn-lg {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 24%;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #E93A39;
+    border-color: #E93A39;
+}
+}
+@media only screen and (max-width: 768px) {
+.navbar-nav {
+        height: 100vh;
+}
+.btnstyle {
+        margin-left: 0.5rem;
+}
+.hide1 h1 {
+    font-size: 3rem;
+}
+.card {
+    margin-bottom: 5%;
+    height: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.viewportMobile {
+    margin-left: 4%;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: transform .7s ease-in-out;
+    cursor: pointer;
+}
+/*Form Button, here I used a larger margin-top in order to avoid overlap with the drop-down i.e. select input type*/
+.btn-group-lg > .btn, .btn-lg {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 23%;
+}
+}
